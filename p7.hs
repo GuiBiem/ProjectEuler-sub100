@@ -1,0 +1,13 @@
+{-# LANGUAGE ViewPatterns #-}
+import Data.List
+
+main::IO()
+main = print $ (primes!!10000)
+
+diff xl@(x:xs) yl@(y:ys) | x < y     = x:diff xs yl
+                         | x > y     =   diff xl ys
+                         | otherwise =   diff xs ys 
+
+primes = 2 : sieve [[p*p, p*p+p..] | p <- primes] [3..] where
+                sieve ((q:cs):r) (span (< q) -> (h,_:t)) = 
+                        h ++ sieve r (diff t cs)
