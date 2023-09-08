@@ -1,5 +1,4 @@
 import Data.List
-import qualified Codec.Picture as digits
 --- Notice that all 9-digit pandigital numbers are divisible by 3, because their sum of digits is divisible by 3. 
 --- So are all 8-digit pandigital numbers. So the greatest prime must be 7 digits.
 --- This algorithm goes from the largest 7-digit pandigital number down and returns the first prime.
